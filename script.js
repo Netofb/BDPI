@@ -9,7 +9,7 @@ const anoAtual = new Date().getFullYear();
 
     document.querySelectorAll("input[name='cartao_sus']").forEach(input => {
         input.addEventListener("input", function() {
-            let erro = this.nextElementSibling; // Pega o elemento de erro próximo ao input
+            let erro = this.nextElementSibling; 
             if (this.value.length === 15) {
                 erro.style.display = "none";
             } else {
