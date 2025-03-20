@@ -1,129 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
-    list-style-type: none;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    list-style-type: 0;
+    font-family: "Poppins", sans-serif;
     
-    
+
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
 }
 
-/* Remove o ícone no Firefox */
-input[type="date"] {
-    appearance: textfield;
-    -moz-appearance: textfield;
-}
-
-/* Remove o ícone no Safari */
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-clear-button {
-    display: none;
-}
-@media print {
-    body {
-        width: 794px; 
-        height: 1123px;
-        margin: 0 auto; 
-        padding: 20px;
-    }
-    
-    form {
-        width: 100%;
-        font-size: 14px;
-    }
-
-    button {
-        display: none; 
-    }
-}
-
-
-.container_header{
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 auto 1rem auto;
-    max-width: 794px; 
-}
-
-.logo_pma_BDPI{
-    max-width: 15%;
-}
-
-.titulo_BDPI{
-    font-size: 0.9rem;
-}
-.data_BDPI{
-    text-align: center;
-    display: flex;
-    
-}
-.data_BDPI h1{
-    font-size: 0.9rem;
-}
-.input_data_BDPI{
-    border: none;
-    font-size: 1.2rem;
-    background: none;
-    color: #000;
-}
-input[type="date"]:focus {
-    outline: none;
-    box-shadow: none;
-    border: none;
-    
-}
-.container_form_informacoes_BDPI{
-display: flex;
-gap: 1rem;
-}
-.form_informacoes_BDPI{
-    border-bottom: 2px solid black;
-    margin: 0 auto 1rem auto;
-}
-
-
-
-    /* Form */
-
 .container {
-    max-width: 900px;
+    background-color: #fdfdfd;
+    max-width: 1200px;
     margin: auto;
     padding: 20px;
-    background: white;
-    border: 2px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
-
+.container_inputs_pasciente{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.container_inputs_pasciente div{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.container_inputs_pasciente label{
+    flex-wrap: nowrap;
+    
+}
+.container_inputs_pasciente input{
+    margin: 5px;
+    padding: 8px;
+    flex-grow: 1;
+    
+}
+.container_titulo{
+    display: flex;
+    justify-content: space-between;
+}
+.container_titulo img{
+    max-width: 20%;
+}
+button {
+    margin: 5px;
+    padding: 8px;
+    flex-grow: 1;
+}
 table {
     width: 100%;
+    margin-top: 20px;
     border-collapse: collapse;
 }
-
 th, td {
-    border: 2px solid black;
+    border: 1px solid #ccc;
+    padding: 8px;
     text-align: center;
-    padding: 10px;
-    width: 20%;
+    flex-wrap: wrap;
+    
 }
-
-input {
-    width: 100%;
-    padding: 5px;
+th {
+    background: #ddd;
+}
+.edit-btn, .delete-btn {
+    background: #2ecc71;
+    max-width: 3rem;
+    border-radius: 4px;
     border: none;
-    outline: none;
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px;
-    width: 100%;
+    padding: 5px;
     cursor: pointer;
 }
-#procedimento{
+.delete-btn {
+    background: #d01803;
+    
+}
+.edit-btn img, .delete-btn img{
+    max-width: 2rem;
+}
+
+.print-btn {
+    font-weight: 700;
+    background: #2ecc71;
+    color: rgb(0, 0, 0);
     border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100% !important;
+}
+
+.container_inputs_funcionario{
+    margin: 3rem auto 3rem auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+   
+}
+.container_inputs_funcionario div{
+    display: flex;
+    flex-direction: column;
+    
+}
+.inputs_funcionario{
+    border-bottom: 2px solid black;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    outline: none;
+}
+.inputs_funcionario:focus{
+    background: white;
 }

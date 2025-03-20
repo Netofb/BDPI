@@ -1,75 +1,76 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>BDPI</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Lista de Pacientes</title>
+
 </head>
 <body>
-  
-    <section class="container">
-        <div class="container_header">
-            <img src="./img/superior timbre.png" alt="logo-pma" class="logo_pma_BDPI">
-            <h1 class="titulo_BDPI">Boletim Diário de Atendimento Ambulatorial Individual - BDPI</h1>
-            <div class="data_BDPI">
-                <input type="date" id="data" class="input_data_BDPI" >
-            </div>
+
+    <main class="container">
+        <div class="container_titulo">
+            <img src="./img/logo.png" alt="">
+            <h2>Cadastro de Pacientes</h2>
          </div>
-         <div class="container_form_informacoes_BDPI">
-            <input type="text" placeholder="Nome da unidade:" class="form_informacoes_BDPI"> 
-            <input type="text" placeholder="CNES:" class="form_informacoes_BDPI"> 
-            <input type="text" placeholder="NOME DO PROFISSIONAL:" class="form_informacoes_BDPI">
+        <div class="container_inputs_pasciente">
+            <div>
+                <input type="number" id="cartaoSus"  placeholder="Cartão do SUS">
+                <input type="text" id="nome" placeholder="Nome do Paciente">
+            </div>
+            <div>
+                
+                <input type="date" id="dataNascimento" placeholder="Data de Nascimento">
+                <input type="text" id="endereco" placeholder="Endereço">
+            </div>
+            <div>
+                <input type="number" id="procedimento" placeholder="Número do Procedimento">
+            </div>
+            <button onclick="adicionarPaciente()">Adicionar Paciente</button>
         </div>
-         
-        <table>
-            <tr>
-                <th>CARTÃO DO SUS</th>
-                <th>NOME DO PACIENTE</th>
-                <th>DATA DE NASCIMENTO</th>
-                <th>ENDEREÇO</th>
-                <th>PROCEDIMENTO</th>
-            </tr>
-            <tr>
-                <td><input <input type="text" id="cartao_sus" name="cartao_sus" required 
-                    minlength="15" maxlength="15" pattern="\d{15}" 
-                    oninput="this.value = this.value.replace(/\D/g, '').slice(0, 15)" class="input_form_BDPI">
-                    <span id="erro" style="color: red; display: none;">O cartão deve ter exatamente 15 números.</span></td>
+        
+        <ul id="listaPacientes"></ul>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><select id="procedimento" name="procedimento">
-                    <option value="" disabled selected>Selecione um procedimento</option>
-                    <option value="consulta">Consulta</option>
-                    <option value="exame">Exame</option>
-                    <option value="cirurgia">Cirurgia</option>
-                    <option value="vacina">Vacinação</option>
-                </select></td>
-            </tr>
-            <tr>
-                <td><input <input type="text" id="cartao_sus" name="cartao_sus" required 
-                    minlength="15" maxlength="15" pattern="\d{15}" 
-                    oninput="this.value = this.value.replace(/\D/g, '').slice(0, 15)" class="input_form_BDPI">
-                    <span id="erro" style="color: red; display: none;">O cartão deve ter exatamente 15 números.</span></td>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><select id="procedimento" name="procedimento">
-                    <option value="" disabled selected>Selecione um procedimento</option>
-                    <option value="consulta">Consulta</option>
-                    <option value="exame">Exame</option>
-                    <option value="cirurgia">Cirurgia</option>
-                    <option value="vacina">Vacinação</option>
-                </select></td>
-            </tr>
-            
-            
+        <div class="container_inputs_funcionario">
+            <div>
+                <label for="">NOME DA UNIDADE</label>
+                <input type="text" id="nomeUnidade" class="inputs_funcionario">
+            </div>
+            <div>
+                <label for="">CNES</label>
+                <input type="number" id="cnes" class="inputs_funcionario">
+            </div>
+            <div>    
+                <label for="">NOME DO PROFISSIONAL</label>
+                <input type="text" id="nomeProfissional" class="inputs_funcionario">
+            </div>
+            <div>    
+                <label for="">DATA DA COLETA</label>
+                <input type="date" id="dataColeta" class="inputs_funcionario">
+            </div>
+        </div>
+        <h3>Lsta de pacientes</h3>
+        
+        <table id="tabelaPacientes">
+            <thead>
+                <tr>
+                    <th>CARTÃO DO SUS</th>
+                    <th>NOME DO PACIENTE</th>
+                    <th>DATA DE NASCIMENTO</th>
+                    <th>ENDEREÇO</th>
+                    <th>PROCEDIMENTO</th>
+                    
+                </tr>
+            </thead>
+            <tbody></tbody>
         </table>
+        
+        
+        <button class="print-btn" onclick="imprimirTabela()">Imprimir</button>
+    </main>
 
-        <button onclick="window.print()">Imprimir Formulário</button>
-    </section>
-    <script src="./script.js"></script>
+<script src="./script.js"></script>
+
 </body>
 </html>
