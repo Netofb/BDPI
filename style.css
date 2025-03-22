@@ -5,8 +5,10 @@
     padding: 0;
     list-style-type: 0;
     font-family: "Poppins", sans-serif;
-    
-
+}
+img{
+    width: 100%;
+    height: 100%;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -14,6 +16,7 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
@@ -22,7 +25,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .container {
     background-color: #fdfdfd;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -53,7 +56,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     justify-content: space-between;
 }
 .container_titulo img{
-    max-width: 20%;
+    max-width: 4rem;
+    height: 100%;
 }
 button {
     margin: 5px;
@@ -89,6 +93,7 @@ th {
 }
 .edit-btn img, .delete-btn img{
     max-width: 2rem;
+    height: 100%;
 }
 
 .print-btn {
@@ -124,3 +129,59 @@ th {
 .inputs_funcionario:focus{
     background: white;
 }
+
+
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 1250px) {
+           .container{
+            max-width: 1000px;
+           }
+          }
+
+          @media (max-width: 1050px) {
+            .container{
+                max-width: 800px;
+            }
+          }
+          @media (max-width: 830px) {
+            .container{
+                max-width: 400px;
+                height: 100%
+            }
+            .container_inputs_pasciente{
+                margin: 2rem auto 2rem auto;
+            }
+            .container_inputs_pasciente div{
+                flex-direction: column;
+            }
+            .container_inputs_funcionario{
+                display: flex;
+                flex-direction: column;
+            }
+            .container_titulo img{
+                max-width: 6rem;
+                height: 100%;
+            }
+            .container_titulo h2{
+                font-size: 0.9rem;
+            }
+            .tabelaPacientes thead tr{                
+            display: flex;
+            }
+
+            .tabelaPacientes thead tr th{
+                font-size: 0.6rem;
+            }
+            .tabelaPacientes tbody tr{
+                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr, 1fr));
+               
+
+            }
+
+          }
+          
+
